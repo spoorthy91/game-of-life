@@ -1,5 +1,5 @@
 pipeline {
-   agent any
+   agent {label 'master'}
    
    environment {
 
@@ -44,6 +44,6 @@ pipeline {
 	}
 	}
 	}
-	}
+	
   
  
