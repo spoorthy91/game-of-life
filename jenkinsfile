@@ -8,8 +8,7 @@ pipeline {
       sonar_username = 'admin'
       sonar_password = 'admin'
       nexusUrl = '172.31.28.191:8081'
-      artifact_version = '0.0.1'
-      
+      artifact_version ='0.0.1'      
  }
 
    tools {
@@ -44,15 +43,13 @@ pipeline {
 	   }
 	   }
 	   }
-	   
-	   stage ('Publishing Artifact') 
-	   {
+	    stage ('Publishing Artifact') {
 	steps {
-	nexusArtifactUploader artifacts: [[artifactId:'gameoflife', classifier: '', file: '/var/lib/jenkins/workspace//test-pipeline/gameoflife-build/target/gameoflife-build-1.0-SNAPSHOT.jar', type: 'jar']], credentialsId: '929d566f-9729-4e5e-8e24-b697b631f6e5', groupId: 'com.wakaleo.gameoflife', nexusUrl: '172.31.28.191:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'release', version: '4.0.0'
-           archiveArtifacts '**/*.jar'
-	
-	
+	  nexusArtifactUploader artifacts: [[artifactId:'gameoflife', classifier: '', file: '/var/lib/jenkins/workspace/jest-pipeline/gameoflife-build/target/gameoflife-build-1.0-SNAPSHOT.jar', type: 'jar']], credentialsId: '929d566f-9729-4e5e-8e24-b697b631f6e5', groupId: 'com.wakaleo.gameoflife', nexusUrl:'172.31.28.191:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'release', version: '4.0.0'
+           archiveArtifacts '**/*.jar' 
 	}
-	}	   	   
+	   }	   
+	
+		   	   
    }
 }
