@@ -55,7 +55,7 @@ pipeline {
          steps {
            sh '''
 	   cd ${WORKSPACE}
-	   docker build -t stage spoorthy91/test1:v4 .	
+	   docker build -t stage spoorthy91/test:v4 .	
 	   
            '''  
 	   
