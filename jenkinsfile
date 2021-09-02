@@ -56,8 +56,7 @@ pipeline {
            sh '''
 	   cd ${WORKSPACE}
 	   docker build -t stage spoorthy91/test:v4 .	
-	   
-           '''  
+	   '''  
 	   
 	   }	
         }
