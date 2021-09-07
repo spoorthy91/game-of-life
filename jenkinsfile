@@ -54,15 +54,15 @@ pipeline {
 	   stage('Docker Build') {
     steps {
         sh '''
-	docker build -t chinniprashantg43211/test:v3 /var/lib/jenkins/workspace/docker-test/
+	docker build -t spoorthy91/test:v3 /var/lib/jenkins/workspace/test-pipeline/
 	'''
       }
     }
  stage('Docker publish') {
     steps {
       script {
-  withDockerRegistry(registry: [credentialsId: '74aa71f2-4e84-4eec-a503-158070be6219']) {
-    sh 'docker push chinniprashantg43211/test:v3'
+  withDockerRegistry(registry: [credentialsId: '2166cf1c-ad45-4246-9259-7b670b29e742']) {
+    sh 'docker push spoorthy91/test:v3'
        }
       }
     }
