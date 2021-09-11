@@ -2,12 +2,13 @@ pipeline{
     agent any 
   stages
    (
-   stage{'git clone')  {
-       steps (
-          // Get some code from a GitHub repository
-          git  'https://github.com/spoorthy91/game-of-life.git'
-       }
-   }
+   stage('git clone') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/spoorthy91/game-of-life.git'
+        }
+        
+        }
   stage ('aws-s3')  {
      steps {
         sh 'AWS_ACCESS_KEY_ID=****************XT7B AWS_SECRET_ACCESS_KEY=****************anw+ aws S3 cp index.html s3://my-datastorage'
